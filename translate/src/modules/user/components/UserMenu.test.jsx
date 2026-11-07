@@ -162,7 +162,7 @@ describe('<UserMenuDialog>', () => {
 
     wrapper.find('.appearance button.dark').simulate('click');
 
-    expect(document.documentElement).toHaveClass('dark-theme');
+    expect(document.body).toHaveClass('dark-theme');
     expect(document.body.getAttribute('data-theme')).toBe('dark');
     expect(onThemeChange).toHaveBeenCalledWith('dark');
   });

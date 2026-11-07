@@ -26,12 +26,8 @@ export function useTheme() {
       newTheme = getSystemTheme();
       storeSystemTheme(newTheme);
     }
-    document.documentElement.classList.remove(
-      'dark-theme',
-      'light-theme',
-      'system-theme',
-    );
-    document.documentElement.classList.add(`${newTheme}-theme`);
+    document.body.classList.remove('dark-theme', 'light-theme', 'system-theme');
+    document.body.classList.add(`${newTheme}-theme`);
 
     // Notify components that resolve theme CSS variables in JavaScript.
     document.dispatchEvent(

@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- prettier-ignore-start -->
-<html{% if locale %} lang="{{ locale }}"{% endif %} class="{{ theme_class(request) }}">
+<html{% if locale %} lang="{{ locale }}"{% endif %}>
 <!-- prettier-ignore-end -->
 <head>
   <meta charset="utf-8" />
@@ -11,6 +11,7 @@
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Mozilla’s Localization Platform" />
   <meta name="author" content="Mozilla" />
+  <meta name="color-scheme" content="only light" />
 
   <link rel="icon" href="/favicon.ico" sizes="32x32" />
   <link rel="icon" href="/static/img/logo.svg" type="image/svg+xml" />
@@ -31,7 +32,7 @@
   {% include "tracker.html" %}
 </head>
 <body
-  class="{% block class %}{% endblock %}"
+  class="{% block class %}{% endblock %} {{ theme_class(request) }}"
   data-theme="{{ user_theme(request.user) }}"
   data-editor-theme="{{ user_editor_theme(request.user) }}"
 >
